@@ -95,7 +95,7 @@ function updateMetrics(chainInfo) {
   elements.metricHeight.textContent = formatNumber(chainInfo.height);
   elements.metricSlot.textContent = formatNumber(chainInfo.latestSlot);
   elements.metricValidators.textContent = formatNumber(chainInfo.validators);
-  elements.metricStake.textContent = `${formatNumber(chainInfo.totalStake)} SFC`;
+  elements.metricStake.textContent = `${formatNumber(chainInfo.totalStake)} TEN`;
 }
 
 function updateLatestBlock(block) {
@@ -157,7 +157,7 @@ function renderValidators(validators) {
       <p class="list-meta mono">${validator.address}</p>
       <div class="mini-row">
         <span class="mini-meta">Stake</span>
-        <strong>${formatNumber(validator.stake)} SFC</strong>
+        <strong>${formatNumber(validator.stake)} TEN</strong>
       </div>
     `;
     elements.validatorsList.appendChild(item);
@@ -179,7 +179,7 @@ function renderMempool(transactions) {
     item.innerHTML = `
       <div class="list-title-row">
         <strong class="mono">${shortHash(tx.txId, 18)}</strong>
-        <strong>${formatNumber(tx.amount)} SFC</strong>
+        <strong>${formatNumber(tx.amount)} TEN</strong>
       </div>
       <p class="list-meta mono">${shortHash(tx.from, 20)} -> ${shortHash(tx.to, 20)}</p>
       <div class="mini-row">
@@ -208,7 +208,7 @@ function renderSlashLog(entries) {
       item.innerHTML = `
         <div class="list-title-row">
           <strong>${entry.offence}</strong>
-          <span class="badge danger">${formatNumber(entry.penalty)} SFC</span>
+          <span class="badge danger">${formatNumber(entry.penalty)} TEN</span>
         </div>
         <p class="list-meta mono">${entry.address}</p>
         <div class="mini-row">

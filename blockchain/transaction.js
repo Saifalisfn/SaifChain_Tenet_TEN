@@ -1,13 +1,13 @@
 /**
  * blockchain/transaction.js
  *
- * Represents a signed value-transfer of the native SFC coin.
+ * Represents a signed value-transfer of the native TEN coin.
  *
  * Fields
  * ──────
  *  from        sender address (0x…)
  *  to          recipient address (0x…)
- *  amount      SFC (Number)
+ *  amount      TEN (Number)
  *  nonce       monotonically increasing counter per sender (replay protection)
  *  timestamp   Unix ms
  *  publicKey   sender's full public key (needed for sig verification)
@@ -123,7 +123,7 @@ class Transaction {
       throw new Error('raw transaction must decode to JSON');
     }
 
-    if (payload?.type && payload.type !== 'SFC_RAW_TX') {
+    if (payload?.type && payload.type !== 'SFC_RAW_TX' && payload.type !== 'TEN_RAW_TX') {
       throw new Error(`unsupported raw transaction type: ${payload.type}`);
     }
 

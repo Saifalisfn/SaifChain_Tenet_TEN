@@ -92,6 +92,20 @@ class Attestation {
   getAttesters(slot) {
     return [...(this.slotVotes.get(slot) ?? new Map()).keys()];
   }
+
+  /** Prune attestation data for slots older than the cutoff to prevent memory leaks. */
+  pruneOlderThan(cutoffSlot) {
+    let pruned = 0;
+    for (const slot of this.slotVotes.keys()) {
+      if (slot < cutoffSlot) {
+        this.slotVotes.delete(slot);
+        pruned++;
+      }
+    }
+    if (pruned > 0) {
+      console.log(`[Attestation] Pruned ${pruned} old slot(s) (cutoff: slot ${cutoffSlot})`);
+    }
+  }
 }
 
 module.exports = Attestation;

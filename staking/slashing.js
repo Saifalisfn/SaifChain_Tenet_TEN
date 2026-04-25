@@ -16,6 +16,7 @@ const {
   SLASH_DOUBLE_PROPOSAL,
   SLASH_OFFLINE,
   MIN_STAKE,
+  STAKING_POOL_ADDRESS,
 } = require('../config/constants');
 
 const OFFENCE = {
@@ -62,13 +63,16 @@ class Slashing {
     const penalty = Math.floor(validator.stake * rate);
     validator.stake -= penalty;
     this.staking.state.removeStake(address, penalty);
-    this.staking.state.coin.burn(address, 0); // coins were already in stake, not liquid
+    // Burn the slashed coins from the staking pool (where they were locked)
+    if (penalty > 0) {
+      this.staking.state.coin.burn(STAKING_POOL_ADDRESS, penalty);
+    }
 
     this.slashLog.push({ address, offence, slot, penalty, timestamp: Date.now() });
     this._onChange();
 
     console.warn(
-      `[Slash] ⚠️  ${address.slice(0,10)}… slashed ${penalty} SFC for ${offence} @ slot ${slot}`
+      `[Slash] ⚠️  ${address.slice(0,10)}… slashed ${penalty} TEN for ${offence} @ slot ${slot}`
     );
 
     // Deactivate if below minimum

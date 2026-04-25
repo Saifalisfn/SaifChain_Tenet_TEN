@@ -11,7 +11,7 @@
  *  5. Unstaking returns coins (minus any pending slash).
  */
 
-const { MIN_STAKE, ATTESTATION_REWARD } = require('../config/constants');
+const { MIN_STAKE, ATTESTATION_REWARD, STAKING_POOL_ADDRESS } = require('../config/constants');
 
 class Staking {
   /**
@@ -30,19 +30,19 @@ class Staking {
   // ── Registration ──────────────────────────────────────────────────
 
   /**
-   * Lock `amount` SFC from `address` into the staking contract.
+   * Lock `amount` TEN from `address` into the staking contract.
    */
   stake(address, amount, publicKey, joinedEpoch = 0) {
     if (amount < MIN_STAKE) {
-      throw new Error(`Minimum stake is ${MIN_STAKE} SFC`);
+      throw new Error(`Minimum stake is ${MIN_STAKE} TEN`);
     }
     const balance = this.state.getBalance(address);
     if (balance < amount) {
       throw new Error(`Insufficient balance: ${balance} < ${amount}`);
     }
 
-    // Deduct from liquid balance
-    this.state.coin.burn(address, amount);
+    // Transfer to staking pool (not burn — staked coins are locked, not destroyed)
+    this.state.coin.transfer(address, STAKING_POOL_ADDRESS, amount);
     // Add to staking state
     this.state.addStake(address, amount);
 
@@ -63,7 +63,7 @@ class Staking {
       this._onChange();
     }
 
-    console.log(`[Staking] ${address.slice(0, 10)}… staked ${amount} SFC (total ${this.getValidatorStake(address)})`);
+    console.log(`[Staking] ${address.slice(0, 10)}… staked ${amount} TEN (total ${this.getValidatorStake(address)})`);
   }
 
   importValidator(record) {
@@ -105,7 +105,8 @@ class Staking {
 
     validator.stake -= amount;
     this.state.removeStake(address, amount);
-    this.state.coin.mint(address, amount);
+    // Return coins from staking pool to liquid balance
+    this.state.coin.transfer(STAKING_POOL_ADDRESS, address, amount);
 
     if (validator.stake < MIN_STAKE) {
       validator.active = false;
@@ -140,7 +141,7 @@ class Staking {
     for (const address of attesters) {
       if (this.validatorPool.has(address)) {
         this.state.coin.mint(address, ATTESTATION_REWARD);
-        console.log(`[Staking] Reward +${ATTESTATION_REWARD} SFC → ${address.slice(0, 10)}…`);
+        console.log(`[Staking] Reward +${ATTESTATION_REWARD} TEN → ${address.slice(0, 10)}…`);
       }
     }
 

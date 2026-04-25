@@ -25,7 +25,7 @@ class ValidatorNode {
    * @param {string} config.address       – validator address (0x…)
    * @param {string} config.publicKey     – ECDSA public key hex
    * @param {string} config.privateKey    – ECDSA private key hex (KEEP SECRET)
-   * @param {number} config.initialStake  – SFC to stake on startup
+   * @param {number} config.initialStake  – TEN to stake on startup
    *
    * @param {import('../blockchain/blockchain')}         blockchain
    * @param {import('../staking/staking')}               staking

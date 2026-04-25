@@ -51,7 +51,7 @@ Each slot (`consensus/slotEngine.js` emits `slot` event):
 4. `finality.js` checks 2/3 stake threshold → marks block finalized
 
 Each epoch end (`epochManager.js`):
-- Distribute `BLOCK_REWARD` (10 SFC) + `ATTESTATION_REWARD` (1 SFC)
+- Distribute `BLOCK_REWARD` (10 TEN) + `ATTESTATION_REWARD` (1 TEN)
 - Slash offline validators 10%
 
 ### Security Invariants
@@ -68,7 +68,7 @@ Each epoch end (`epochManager.js`):
 
 ### Key Constants (`config/constants.js`)
 
-`MIN_STAKE=100 SFC`, `SLASH_PERCENTAGE=10`, `GENESIS_SUPPLY=1_000_000 SFC`, `CHAIN_ID=31337`, `FAUCET_AMOUNT=1000 SFC`, `MAX_PEERS=10`, `P2P_MAX_MESSAGE_BYTES=65536`.
+`MIN_STAKE=100 TEN`, `SLASH_PERCENTAGE=10`, `GENESIS_SUPPLY=1_000_000 TEN`, `CHAIN_ID=31337`, `FAUCET_AMOUNT=1000 TEN`, `MAX_PEERS=10`, `P2P_MAX_MESSAGE_BYTES=65536`.
 
 ### RPC API
 

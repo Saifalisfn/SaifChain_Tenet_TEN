@@ -73,7 +73,7 @@ function renderRecentTransactions(records) {
       </div>
       <p class="list-meta mono">${shortHash(tx.from, 22)} -> ${shortHash(tx.to, 22)}</p>
       <div class="mini-row">
-        <span class="mini-meta">${formatNumber(tx.amount)} SFC</span>
+        <span class="mini-meta">${formatNumber(tx.amount)} TEN</span>
         <span class="mini-meta">Block ${record.blockIndex ?? '-'}</span>
       </div>
     `;
@@ -98,7 +98,7 @@ function renderMempool(transactions) {
       </div>
       <p class="list-meta mono">${shortHash(tx.from, 22)} -> ${shortHash(tx.to, 22)}</p>
       <div class="mini-row">
-        <span class="mini-meta">${formatNumber(tx.amount)} SFC</span>
+        <span class="mini-meta">${formatNumber(tx.amount)} TEN</span>
         <span class="mini-meta">Nonce ${tx.nonce}</span>
       </div>
     `;

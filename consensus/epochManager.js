@@ -73,11 +73,15 @@ class EpochManager extends EventEmitter {
     }
 
     console.log(`[Epoch] Active validators: ${activeValidators.length}`);
-    console.log(`[Epoch] Total staked: ${this.staking.totalActiveStake()} SFC`);
+    console.log(`[Epoch] Total staked: ${this.staking.totalActiveStake()} TEN`);
     console.log(`[Epoch] ═══════════════════════════\n`);
 
     // 4. Reset for next epoch
     this._epochSlots = [];
+
+    // 5. Prune old attestation data (keep last 2 epochs)
+    const cutoffSlot = Math.max(0, (epoch - 1) * SLOTS_PER_EPOCH);
+    this.attestation.pruneOlderThan(cutoffSlot);
 
     this.emit('epochProcessed', { epoch });
   }
