@@ -1,0 +1,153 @@
+{
+  "schemaVersion": "1.0",
+  "chainId": 2049,
+  "mainnetChainId": 2048,
+  "chainName": "Tenet Amoy Testnet",
+  "symbol": "TEN",
+  "decimals": 18,
+  "totalSupply": 1000000000,
+  "genesisTimestamp": "2026-04-26T00:00:00Z",
+
+  "allocations": [
+    {
+      "name": "Staking Rewards Pool",
+      "category": "STAKING_REWARDS",
+      "address": "0x0000000000000000000000000000000000000001",
+      "amount": 300000000,
+      "pct": 30,
+      "liquid": false,
+      "vesting": {
+        "type": "EMISSION",
+        "description": "Released per-block via dynamic halving schedule. Initial 5 TEN/block, halving every 12,623,040 blocks (~2 years). Floor: 0.1 TEN/block."
+      }
+    },
+    {
+      "name": "Community Airdrop & Incentives",
+      "category": "COMMUNITY",
+      "address": "0x0000000000000000000000000000000000000002",
+      "amount": 250000000,
+      "pct": 25,
+      "liquid": false,
+      "vesting": {
+        "type": "CLIFF_LINEAR",
+        "cliffMonths": 0,
+        "vestingMonths": 6,
+        "immediateUnlockPct": 0.5,
+        "description": "50% (125M TEN) unlocked at genesis for airdrop + early incentives. Remaining 50% vests linearly over 6 months for ongoing community programs."
+      }
+    },
+    {
+      "name": "Ecosystem Treasury",
+      "category": "TREASURY",
+      "address": "0x0000000000000000000000000000000000000003",
+      "amount": 200000000,
+      "pct": 20,
+      "liquid": false,
+      "vesting": {
+        "type": "CLIFF_LINEAR",
+        "cliffMonths": 0,
+        "vestingMonths": 36,
+        "immediateUnlockPct": 0.05,
+        "releaseSchedule": "QUARTERLY",
+        "description": "5% (10M TEN) unlocked at genesis for operational liquidity injection and DEX bootstrapping. Remaining 95% released quarterly over 3 years via on-chain governance vote."
+      }
+    },
+    {
+      "name": "Team & Developers",
+      "category": "TEAM",
+      "address": "0x0000000000000000000000000000000000000004",
+      "amount": 150000000,
+      "pct": 15,
+      "liquid": false,
+      "vesting": {
+        "type": "CLIFF_LINEAR",
+        "cliffMonths": 12,
+        "vestingMonths": 36,
+        "immediateUnlockPct": 0,
+        "description": "12-month cliff, then daily linear vesting over 36 months. Fully unlocked at month 48."
+      }
+    },
+    {
+      "name": "Strategic Partners",
+      "category": "PARTNERS",
+      "address": "0x0000000000000000000000000000000000000005",
+      "amount": 100000000,
+      "pct": 10,
+      "liquid": false,
+      "vesting": {
+        "type": "CLIFF_LINEAR",
+        "cliffMonths": 6,
+        "vestingMonths": 24,
+        "immediateUnlockPct": 0,
+        "description": "6-month cliff, then monthly linear vesting over 24 months. Fully unlocked at month 30."
+      }
+    }
+  ],
+
+  "genesisValidators": [
+    {
+      "id": 1,
+      "address": "REPLACE_WITH_VALIDATOR_1_ADDRESS",
+      "stake": 10000,
+      "name": "Genesis Validator 1"
+    },
+    {
+      "id": 2,
+      "address": "REPLACE_WITH_VALIDATOR_2_ADDRESS",
+      "stake": 10000,
+      "name": "Genesis Validator 2"
+    },
+    {
+      "id": 3,
+      "address": "REPLACE_WITH_VALIDATOR_3_ADDRESS",
+      "stake": 10000,
+      "name": "Genesis Validator 3"
+    }
+  ],
+
+  "faucet": {
+    "address": "0x0000000000000000000000000000000000000099",
+    "initialBalance": 5000000,
+    "perRequestAmount": 10000,
+    "cooldownMs": 60000,
+    "sourceAllocation": "COMMUNITY"
+  },
+
+  "rewardSchedule": {
+    "initialBlockReward": 10,
+    "blocksPerHalving": 12623040,
+    "minBlockReward": 0.1,
+    "attestationReward": 1
+  },
+
+  "slashingConfig": {
+    "doubleVote": 0.20,
+    "doubleProposal": 0.15,
+    "offline": 0.02
+  },
+
+  "liquidityBootstrap": {
+    "dexPair": "TEN/USDC",
+    "initialTreasuryInjection": 5000000,
+    "targetInitialPrice_USD": 0.01,
+    "stabilizationReserve": 2000000,
+    "note": "Treasury injects 5M TEN into initial DEX pool at launch. 2M TEN stabilization reserve held back for price support within first 30 days."
+  },
+
+  "networkConfig": {
+    "testnet": {
+      "chainId": 2049,
+      "chainName": "Tenet Amoy Testnet",
+      "p2pPort": 6001,
+      "rpcPort": 3000,
+      "symbol": "tTEN"
+    },
+    "mainnet": {
+      "chainId": 2048,
+      "chainName": "Tenet Mainnet",
+      "p2pPort": 6001,
+      "rpcPort": 3000,
+      "symbol": "TEN"
+    }
+  }
+}

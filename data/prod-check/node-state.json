@@ -1,0 +1,407 @@
+{
+  "version": 1,
+  "validatorAddress": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+  "blockchain": {
+    "chain": [
+      {
+        "index": 0,
+        "timestamp": 0,
+        "transactions": [],
+        "previousHash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "validator": "GENESIS",
+        "slot": 0,
+        "epoch": 0,
+        "stateRoot": "aeebad4a796fcc2e15dc4c6061b45ed9b373f26adfc798ca7d2d8cc58182718e",
+        "hash": "fb4df64fca6b6931f979730e1fa2581c55ae17999e918933e70f16ed3758cf18",
+        "finalized": true,
+        "attestations": []
+      },
+      {
+        "index": 1,
+        "timestamp": 1775421582938,
+        "transactions": [
+          {
+            "txId": "d51c280e623d61067fbdfd1d09c38db742cc43603b19b5f3e92f46b324e59502",
+            "from": "COINBASE",
+            "to": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+            "amount": 10,
+            "nonce": 0,
+            "timestamp": 1775421582938,
+            "signature": "COINBASE"
+          }
+        ],
+        "previousHash": "fb4df64fca6b6931f979730e1fa2581c55ae17999e918933e70f16ed3758cf18",
+        "validator": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+        "slot": 1,
+        "epoch": 0,
+        "stateRoot": "4a8db1c8bb5f49a3344663daba2129598a06b68dceb68300dd7c33623d1adc48",
+        "hash": "705ca92987a6864734a905ac8ee813b67204a9f77520b84988699130aa59c3eb",
+        "finalized": true,
+        "attestations": [
+          {
+            "validatorAddress": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+            "blockHash": "705ca92987a6864734a905ac8ee813b67204a9f77520b84988699130aa59c3eb",
+            "signature": "304502206af66db7c9bf6b40b4a9b69d40213eb73d8d4faf850c9fe4703e03a651030834022100ab69d172969d97e81dbd28d45ceb7a9ff8c795a7f895e11f8fba447e6edc1932"
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "timestamp": 1775421587944,
+        "transactions": [
+          {
+            "txId": "93394681458fdf7ed87ced658e6b7413433a17cf0651d9a75d93a277151d7566",
+            "from": "COINBASE",
+            "to": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+            "amount": 10,
+            "nonce": 0,
+            "timestamp": 1775421587944,
+            "signature": "COINBASE"
+          },
+          {
+            "txId": "4e04717ecf170359c6fe1316462aa22b66f418f1c661271903bf38f5733e6c95",
+            "from": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+            "to": "0x5555555555555555555555555555555555555555",
+            "amount": 10,
+            "nonce": 0,
+            "timestamp": 1775421586983,
+            "signature": "ETH_COMPAT"
+          }
+        ],
+        "previousHash": "705ca92987a6864734a905ac8ee813b67204a9f77520b84988699130aa59c3eb",
+        "validator": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+        "slot": 2,
+        "epoch": 0,
+        "stateRoot": "f7f7d0f46bc54ef7aea847219ba068288af337f9aa45fd90f186b54f6eb40fe9",
+        "hash": "69073f319872bcc6fdf34a471830184b2f3b85b98e2b68caefa636d7368e76e4",
+        "finalized": true,
+        "attestations": [
+          {
+            "validatorAddress": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+            "blockHash": "69073f319872bcc6fdf34a471830184b2f3b85b98e2b68caefa636d7368e76e4",
+            "signature": "3046022100e892ac5a0b607db3f5b9d90f9c204de24c1fc8a3acb4c6f64f3737063d7859a802210098c9df99e07d01eecd3b7a99f4c4f7607bbd8aa919c43edcfd1db8b4f6fc2f73"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "timestamp": 1775421592955,
+        "transactions": [
+          {
+            "txId": "7266dc29c6dc8e16e7ba736b124a270e77aa94bda6cccd9136411d7e0158b468",
+            "from": "COINBASE",
+            "to": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+            "amount": 10,
+            "nonce": 0,
+            "timestamp": 1775421592955,
+            "signature": "COINBASE"
+          }
+        ],
+        "previousHash": "69073f319872bcc6fdf34a471830184b2f3b85b98e2b68caefa636d7368e76e4",
+        "validator": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+        "slot": 3,
+        "epoch": 0,
+        "stateRoot": "a679d7c679f928e92b003b7d004b6d7ae75211cd652ea515959457227fd2cb9f",
+        "hash": "7a5f15f429540d9676b70f0a8bb783b524bed89896e80799405c7ca1669740e2",
+        "finalized": true,
+        "attestations": [
+          {
+            "validatorAddress": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+            "blockHash": "7a5f15f429540d9676b70f0a8bb783b524bed89896e80799405c7ca1669740e2",
+            "signature": "304502206902cb4128b733fb1ac2bdc662a28ba27034121d4edb07eb45953419702d9913022100c35d4b050f31b8f07ccd9f7c73db3afaeecb571b1d655b6f65e7f700f687bfa9"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "timestamp": 1775421600006,
+        "transactions": [
+          {
+            "txId": "e5bf519efdf02a4320bbd7034265d35c3daf1b195967842204de41f9ff546466",
+            "from": "COINBASE",
+            "to": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+            "amount": 10,
+            "nonce": 0,
+            "timestamp": 1775421600005,
+            "signature": "COINBASE"
+          }
+        ],
+        "previousHash": "7a5f15f429540d9676b70f0a8bb783b524bed89896e80799405c7ca1669740e2",
+        "validator": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+        "slot": 1,
+        "epoch": 0,
+        "stateRoot": "f761442a5512e2c891e317efa9c69f629e6252e50704f365927d93a18e77415f",
+        "hash": "f733e43153dc17edd2e2526e4e0fa69fe9e0ad9071e030fb31dc3a810573cd5b",
+        "finalized": true,
+        "attestations": [
+          {
+            "validatorAddress": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+            "blockHash": "f733e43153dc17edd2e2526e4e0fa69fe9e0ad9071e030fb31dc3a810573cd5b",
+            "signature": "3045022009019f52b123d8fc9846976d6dd26a6ff59f1bfde019111864bd3e9092962621022100d4ad0288b0e2983d50626099e98a1b9ade8bab0b3d10afa1341ac5670fb4a1a2"
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "timestamp": 1775421605011,
+        "transactions": [
+          {
+            "txId": "3d4252fda6c93bbdc51322b5d216ae95d5a161c2bac414d819196c6d225892ba",
+            "from": "COINBASE",
+            "to": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+            "amount": 10,
+            "nonce": 0,
+            "timestamp": 1775421605011,
+            "signature": "COINBASE"
+          }
+        ],
+        "previousHash": "f733e43153dc17edd2e2526e4e0fa69fe9e0ad9071e030fb31dc3a810573cd5b",
+        "validator": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+        "slot": 2,
+        "epoch": 0,
+        "stateRoot": "c0080fc4a82f6f9db6e220ccb77511c6aa0f02b18520341aa1edf27213aa4cf3",
+        "hash": "7a485590b1e8a4f0db31cd959830b87d3cd41fdf4ef072e184218f211b984580",
+        "finalized": true,
+        "attestations": [
+          {
+            "validatorAddress": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+            "blockHash": "7a485590b1e8a4f0db31cd959830b87d3cd41fdf4ef072e184218f211b984580",
+            "signature": "304402207bd67989fe15a2a18aa74690bf372d50aeb2e5916f1cf6a8d0bbd098a1c2a292022039cf44ecaf6937c29efbc02f87c00d2ae7c0d61948a417c2dfbe5e4950e10174"
+          }
+        ]
+      }
+    ],
+    "mempool": [],
+    "state": {
+      "balances": {
+        "0x289d53453c01d6996f0274e343861a9b51b814e1": 9540,
+        "0x4444444444444444444444444444444444444444": 1000,
+        "0x5555555555555555555555555555555555555555": 10
+      },
+      "nonces": {
+        "0x289d53453c01d6996f0274e343861a9b51b814e1": 1
+      },
+      "stakes": {
+        "0x289d53453c01d6996f0274e343861a9b51b814e1": 500
+      }
+    },
+    "txIndex": [
+      [
+        "d51c280e623d61067fbdfd1d09c38db742cc43603b19b5f3e92f46b324e59502",
+        {
+          "tx": {
+            "txId": "d51c280e623d61067fbdfd1d09c38db742cc43603b19b5f3e92f46b324e59502",
+            "from": "COINBASE",
+            "to": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+            "amount": 10,
+            "nonce": 0,
+            "timestamp": 1775421582938,
+            "signature": "COINBASE"
+          },
+          "blockIndex": 1,
+          "blockHash": "705ca92987a6864734a905ac8ee813b67204a9f77520b84988699130aa59c3eb",
+          "transactionIndex": 0,
+          "status": "finalized"
+        }
+      ],
+      [
+        "4e04717ecf170359c6fe1316462aa22b66f418f1c661271903bf38f5733e6c95",
+        {
+          "tx": {
+            "txId": "4e04717ecf170359c6fe1316462aa22b66f418f1c661271903bf38f5733e6c95",
+            "from": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+            "to": "0x5555555555555555555555555555555555555555",
+            "amount": 10,
+            "nonce": 0,
+            "timestamp": 1775421586983,
+            "signature": "ETH_COMPAT"
+          },
+          "blockIndex": 2,
+          "blockHash": "69073f319872bcc6fdf34a471830184b2f3b85b98e2b68caefa636d7368e76e4",
+          "transactionIndex": 1,
+          "status": "finalized"
+        }
+      ],
+      [
+        "93394681458fdf7ed87ced658e6b7413433a17cf0651d9a75d93a277151d7566",
+        {
+          "tx": {
+            "txId": "93394681458fdf7ed87ced658e6b7413433a17cf0651d9a75d93a277151d7566",
+            "from": "COINBASE",
+            "to": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+            "amount": 10,
+            "nonce": 0,
+            "timestamp": 1775421587944,
+            "signature": "COINBASE"
+          },
+          "blockIndex": 2,
+          "blockHash": "69073f319872bcc6fdf34a471830184b2f3b85b98e2b68caefa636d7368e76e4",
+          "transactionIndex": 0,
+          "status": "finalized"
+        }
+      ],
+      [
+        "7266dc29c6dc8e16e7ba736b124a270e77aa94bda6cccd9136411d7e0158b468",
+        {
+          "tx": {
+            "txId": "7266dc29c6dc8e16e7ba736b124a270e77aa94bda6cccd9136411d7e0158b468",
+            "from": "COINBASE",
+            "to": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+            "amount": 10,
+            "nonce": 0,
+            "timestamp": 1775421592955,
+            "signature": "COINBASE"
+          },
+          "blockIndex": 3,
+          "blockHash": "7a5f15f429540d9676b70f0a8bb783b524bed89896e80799405c7ca1669740e2",
+          "transactionIndex": 0,
+          "status": "finalized"
+        }
+      ],
+      [
+        "e5bf519efdf02a4320bbd7034265d35c3daf1b195967842204de41f9ff546466",
+        {
+          "tx": {
+            "txId": "e5bf519efdf02a4320bbd7034265d35c3daf1b195967842204de41f9ff546466",
+            "from": "COINBASE",
+            "to": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+            "amount": 10,
+            "nonce": 0,
+            "timestamp": 1775421600005,
+            "signature": "COINBASE"
+          },
+          "blockIndex": 4,
+          "blockHash": "f733e43153dc17edd2e2526e4e0fa69fe9e0ad9071e030fb31dc3a810573cd5b",
+          "transactionIndex": 0,
+          "status": "finalized"
+        }
+      ],
+      [
+        "3d4252fda6c93bbdc51322b5d216ae95d5a161c2bac414d819196c6d225892ba",
+        {
+          "tx": {
+            "txId": "3d4252fda6c93bbdc51322b5d216ae95d5a161c2bac414d819196c6d225892ba",
+            "from": "COINBASE",
+            "to": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+            "amount": 10,
+            "nonce": 0,
+            "timestamp": 1775421605011,
+            "signature": "COINBASE"
+          },
+          "blockIndex": 5,
+          "blockHash": "7a485590b1e8a4f0db31cd959830b87d3cd41fdf4ef072e184218f211b984580",
+          "transactionIndex": 0,
+          "status": "finalized"
+        }
+      ]
+    ],
+    "receipts": [
+      [
+        "d51c280e623d61067fbdfd1d09c38db742cc43603b19b5f3e92f46b324e59502",
+        {
+          "transactionHash": "0xd51c280e623d61067fbdfd1d09c38db742cc43603b19b5f3e92f46b324e59502",
+          "transactionIndex": 0,
+          "blockHash": "0x705ca92987a6864734a905ac8ee813b67204a9f77520b84988699130aa59c3eb",
+          "blockNumber": 1,
+          "from": "COINBASE",
+          "to": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+          "cumulativeGasUsed": "0x5208",
+          "gasUsed": "0x5208",
+          "contractAddress": null,
+          "logs": [],
+          "status": "0x1"
+        }
+      ],
+      [
+        "93394681458fdf7ed87ced658e6b7413433a17cf0651d9a75d93a277151d7566",
+        {
+          "transactionHash": "0x93394681458fdf7ed87ced658e6b7413433a17cf0651d9a75d93a277151d7566",
+          "transactionIndex": 0,
+          "blockHash": "0x69073f319872bcc6fdf34a471830184b2f3b85b98e2b68caefa636d7368e76e4",
+          "blockNumber": 2,
+          "from": "COINBASE",
+          "to": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+          "cumulativeGasUsed": "0x5208",
+          "gasUsed": "0x5208",
+          "contractAddress": null,
+          "logs": [],
+          "status": "0x1"
+        }
+      ],
+      [
+        "4e04717ecf170359c6fe1316462aa22b66f418f1c661271903bf38f5733e6c95",
+        {
+          "transactionHash": "0x4e04717ecf170359c6fe1316462aa22b66f418f1c661271903bf38f5733e6c95",
+          "transactionIndex": 1,
+          "blockHash": "0x69073f319872bcc6fdf34a471830184b2f3b85b98e2b68caefa636d7368e76e4",
+          "blockNumber": 2,
+          "from": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+          "to": "0x5555555555555555555555555555555555555555",
+          "cumulativeGasUsed": "0x5208",
+          "gasUsed": "0x5208",
+          "contractAddress": null,
+          "logs": [],
+          "status": "0x1"
+        }
+      ],
+      [
+        "7266dc29c6dc8e16e7ba736b124a270e77aa94bda6cccd9136411d7e0158b468",
+        {
+          "transactionHash": "0x7266dc29c6dc8e16e7ba736b124a270e77aa94bda6cccd9136411d7e0158b468",
+          "transactionIndex": 0,
+          "blockHash": "0x7a5f15f429540d9676b70f0a8bb783b524bed89896e80799405c7ca1669740e2",
+          "blockNumber": 3,
+          "from": "COINBASE",
+          "to": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+          "cumulativeGasUsed": "0x5208",
+          "gasUsed": "0x5208",
+          "contractAddress": null,
+          "logs": [],
+          "status": "0x1"
+        }
+      ],
+      [
+        "e5bf519efdf02a4320bbd7034265d35c3daf1b195967842204de41f9ff546466",
+        {
+          "transactionHash": "0xe5bf519efdf02a4320bbd7034265d35c3daf1b195967842204de41f9ff546466",
+          "transactionIndex": 0,
+          "blockHash": "0xf733e43153dc17edd2e2526e4e0fa69fe9e0ad9071e030fb31dc3a810573cd5b",
+          "blockNumber": 4,
+          "from": "COINBASE",
+          "to": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+          "cumulativeGasUsed": "0x5208",
+          "gasUsed": "0x5208",
+          "contractAddress": null,
+          "logs": [],
+          "status": "0x1"
+        }
+      ],
+      [
+        "3d4252fda6c93bbdc51322b5d216ae95d5a161c2bac414d819196c6d225892ba",
+        {
+          "transactionHash": "0x3d4252fda6c93bbdc51322b5d216ae95d5a161c2bac414d819196c6d225892ba",
+          "transactionIndex": 0,
+          "blockHash": "0x7a485590b1e8a4f0db31cd959830b87d3cd41fdf4ef072e184218f211b984580",
+          "blockNumber": 5,
+          "from": "COINBASE",
+          "to": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+          "cumulativeGasUsed": "0x5208",
+          "gasUsed": "0x5208",
+          "contractAddress": null,
+          "logs": [],
+          "status": "0x1"
+        }
+      ]
+    ]
+  },
+  "staking": [
+    {
+      "address": "0x289d53453c01d6996f0274e343861a9b51b814e1",
+      "publicKey": "04cd45871de8c1a3e115f589b80f2b9aeaddb1340367dcfbc430d476be27c0d8da3d3066d9b99955c7f82c35595287f164d4d831005c632ce24229d70b79af51b9",
+      "stake": 500,
+      "active": true,
+      "slashed": false
+    }
+  ],
+  "slashing": []
+}

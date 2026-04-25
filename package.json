@@ -1,0 +1,23 @@
+{
+  "name": "saifchain",
+  "version": "1.0.0",
+  "description": "SaifChain – Ethereum-style Proof-of-Stake Layer-1 blockchain simulation",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test:integration": "node scripts/integration-test.js",
+    "node1": "node scripts/start-node.js 1",
+    "node2": "node scripts/start-node.js 2",
+    "node3": "node scripts/start-node.js 3"
+  },
+  "dependencies": {
+    "elliptic": "^6.5.4",
+    "ethers": "^6.16.0",
+    "express": "^4.18.2",
+    "ws": "^8.14.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "MIT"
+}

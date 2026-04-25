@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SaifChain Console</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Layer-1 Observer</p>
+        <h1>SaifChain Console</h1>
+        <p class="hero-text">
+          A live front-end for your Proof-of-Stake simulation. Track finality,
+          inspect blocks, watch validators, and query balances from the same node
+          that serves JSON-RPC.
+        </p>
+      </div>
+      <div class="hero-status">
+        <div class="status-ring">
+          <span id="network-status-dot"></span>
+          <strong id="network-status-text">Connecting</strong>
+        </div>
+        <p id="last-updated">Waiting for first sync...</p>
+        <a class="ghost-button" href="/explorer.html">Open explorer</a>
+        <button id="refresh-all" class="ghost-button" type="button">Refresh now</button>
+      </div>
+    </header>
+
+    <main class="dashboard">
+      <section class="metrics-grid">
+        <article class="metric-card">
+          <p class="metric-label">Block Height</p>
+          <h2 id="metric-height">-</h2>
+          <p class="metric-subtext">Current canonical chain height</p>
+        </article>
+        <article class="metric-card">
+          <p class="metric-label">Latest Slot</p>
+          <h2 id="metric-slot">-</h2>
+          <p class="metric-subtext">Most recent observed proposer slot</p>
+        </article>
+        <article class="metric-card">
+          <p class="metric-label">Active Validators</p>
+          <h2 id="metric-validators">-</h2>
+          <p class="metric-subtext">Validators currently participating</p>
+        </article>
+        <article class="metric-card">
+          <p class="metric-label">Total Stake</p>
+          <h2 id="metric-stake">-</h2>
+          <p class="metric-subtext">Combined active stake in SFC</p>
+        </article>
+      </section>
+
+      <section class="content-grid">
+        <article class="panel spotlight-panel">
+          <div class="panel-header">
+            <div>
+              <p class="panel-kicker">Finalized Head</p>
+              <h3>Latest Block</h3>
+            </div>
+            <span id="latest-finality-badge" class="badge">Unknown</span>
+          </div>
+          <div id="latest-block" class="spotlight-content"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="panel-kicker">Validator Set</p>
+              <h3>Validators</h3>
+            </div>
+          </div>
+          <div id="validators-list" class="list-container"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="panel-kicker">Pending Flow</p>
+              <h3>Mempool</h3>
+            </div>
+            <span id="mempool-count" class="badge">0 tx</span>
+          </div>
+          <div id="mempool-list" class="list-container compact"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="panel-kicker">Consensus Safety</p>
+              <h3>Slashing Log</h3>
+            </div>
+          </div>
+          <div id="slash-log" class="list-container compact"></div>
+        </article>
+      </section>
+
+      <section class="tools-grid">
+        <article class="panel tool-panel">
+          <div class="panel-header">
+            <div>
+              <p class="panel-kicker">RPC Tool</p>
+              <h3>Lookup Block</h3>
+            </div>
+          </div>
+          <form id="block-form" class="tool-form">
+            <label for="block-input">Block number or latest</label>
+            <div class="inline-form">
+              <input id="block-input" name="block" type="text" placeholder="latest">
+              <button type="submit">Inspect</button>
+            </div>
+          </form>
+          <pre id="block-result" class="result-box">No lookup yet.</pre>
+        </article>
+
+        <article class="panel tool-panel">
+          <div class="panel-header">
+            <div>
+              <p class="panel-kicker">Account Tool</p>
+              <h3>Lookup Balance</h3>
+            </div>
+          </div>
+          <form id="balance-form" class="tool-form">
+            <label for="address-input">Wallet address</label>
+            <div class="inline-form">
+              <input id="address-input" name="address" type="text" placeholder="0x...">
+              <button type="submit">Query</button>
+            </div>
+          </form>
+          <pre id="balance-result" class="result-box">No address queried yet.</pre>
+        </article>
+
+        <article class="panel tool-panel">
+          <div class="panel-header">
+            <div>
+              <p class="panel-kicker">Local Funding</p>
+              <h3>Request Faucet</h3>
+            </div>
+            <span class="badge">1,000 SFC</span>
+          </div>
+          <form id="faucet-form" class="tool-form">
+            <label for="faucet-input">Wallet address</label>
+            <div class="inline-form">
+              <input id="faucet-input" name="faucetAddress" type="text" placeholder="0x...">
+              <button type="submit">Fund</button>
+            </div>
+          </form>
+          <button id="fill-metamask" class="ghost-button secondary-button" type="button">Use MetaMask account</button>
+          <pre id="faucet-result" class="result-box">No faucet request yet.</pre>
+        </article>
+
+        <article class="panel tool-panel">
+          <div class="panel-header">
+            <div>
+              <p class="panel-kicker">Transfer Tool</p>
+              <h3>Send SFC</h3>
+            </div>
+            <span class="badge">Wallet bridge</span>
+          </div>
+          <form id="send-form" class="tool-form">
+            <label for="send-from-input">From address</label>
+            <div class="inline-form">
+              <input id="send-from-input" name="from" type="text" placeholder="0x...">
+              <button id="fill-send-metamask" class="secondary-button" type="button">Use MetaMask</button>
+            </div>
+            <label for="send-to-input">To address</label>
+            <input id="send-to-input" name="to" type="text" placeholder="0x...">
+            <label for="send-amount-input">Amount (SFC)</label>
+            <div class="inline-form">
+              <input id="send-amount-input" name="amount" type="number" min="0" step="1" placeholder="10">
+              <button type="submit">Send</button>
+            </div>
+          </form>
+          <pre id="send-result" class="result-box">No transfer sent yet.</pre>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <template id="empty-state-template">
+    <div class="empty-state">
+      <p>Nothing here yet.</p>
+    </div>
+  </template>
+
+  <script src="/app.js"></script>
+</body>
+</html>
