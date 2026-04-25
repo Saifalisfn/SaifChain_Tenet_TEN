@@ -1,14 +1,34 @@
 {
   "name": "saifchain",
-  "version": "1.0.0",
-  "description": "SaifChain – Ethereum-style Proof-of-Stake Layer-1 blockchain simulation",
+  "version": "0.1.0",
+  "description": "SaifChain – Ethereum-style Proof-of-Stake Layer-1 blockchain simulation. Native coin: Tenet (TEN)",
   "main": "index.js",
+  "author": "Saif Ali <https://github.com/Saifalisfn>",
+  "license": "MIT",
+  "homepage": "https://github.com/Saifalisfn/SaifChain_Tenet_TEN#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Saifalisfn/SaifChain_Tenet_TEN.git"
+  },
+  "keywords": [
+    "blockchain",
+    "proof-of-stake",
+    "layer-1",
+    "tenet",
+    "TEN",
+    "ethereum",
+    "simulation",
+    "consensus",
+    "p2p",
+    "json-rpc"
+  ],
   "scripts": {
     "start": "node index.js",
-    "test:integration": "node scripts/integration-test.js",
+    "dev": "node --watch index.js",
     "node1": "node scripts/start-node.js 1",
     "node2": "node scripts/start-node.js 2",
-    "node3": "node scripts/start-node.js 3"
+    "node3": "node scripts/start-node.js 3",
+    "test:integration": "node scripts/integration-test.js"
   },
   "dependencies": {
     "elliptic": "^6.5.4",
@@ -18,6 +38,5 @@
   },
   "engines": {
     "node": ">=18.0.0"
-  },
-  "license": "MIT"
+  }
 }
